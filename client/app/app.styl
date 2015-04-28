@@ -14,10 +14,10 @@
   font-weight: normal
   font-style: normal
   
-primary = #34495e
-secondary = #16a085
+primary = #16a085
+secondary = lighten(#2c3e50, 10%)
 success = #2ecc71
-danger = #e74c3c
+danger = #c0392b
 info = #ecf0f1
 text-color = #333333
 
@@ -66,6 +66,8 @@ a
 
 // Component styles are injected through grunt
 // injector
+@import 'bucket/bucket-list.styl';
 @import 'bucket/bucket.styl';
+@import 'styles/button.styl';
 @import 'navbar/navbar.styl';
 // endinjector

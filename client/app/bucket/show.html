@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="bucket-left">
+        <h1>{{bucket.name}}</h1>
+        <br>
+        <p>{{bucket.description}}</p>
+        <br>
+        <button class="btn btn-danger btn-md" ng-click="remove(bucket._id)">Remove Bucket</button>
+        <br><br>
+        <h2>Add Item to the Bucket</h2>
+        <br><br>
+        <div class="group">
+            <input type="text">
+        </div>
+        <br>
+        <div class="group">
+            <input type="text">
+        </div>
+        <br>
+        <button class="btn btn-secondary btn-md">Add Item</button>
+    </div>
+    <div class="bucket-right">
+        <ul>
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+        </ul>
+    </div>
+</div>

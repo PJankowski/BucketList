@@ -1,22 +1,12 @@
 <div class="container">
-    <div class="bucket-list-item">
-        <h3>Bucket Title</h3>
-        <p>This would be the bucket description</p>
+    <div class="bucket-list-item" ng-repeat="bucket in buckets">
+        <h3><a href="/bucket/{{bucket._id}}">{{bucket.name}}</a></h3>
+        <p>{{bucket.description}}</p>
     </div>
-    <div class="bucket-list-item">
-        <h3>Bucket Title</h3>
-        <p>This would be the bucket description</p>
+    <div class="add-bucket-item" ui-sref="buckets.add">
+        <h2>Add Bucket</h2>
+        <i class="fa fa-plus-circle fa-5x"></i>
     </div>
-    <div class="bucket-list-item">
-        <h3>Bucket Title</h3>
-        <p>This would be the bucket description</p>
-    </div>
-    <div class="bucket-list-item">
-        <h3>Bucket Title</h3>
-        <p>This would be the bucket description</p>
-    </div>
-    <div class="bucket-list-item">
-        <h3>Bucket Title</h3>
-        <p>This would be the bucket description</p>
-    </div>
+
+    <div ui-view="add-bucket"></div>
 </div>

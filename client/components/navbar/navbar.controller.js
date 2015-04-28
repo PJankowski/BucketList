@@ -5,10 +5,6 @@ angular.module('bucketListApp')
     $scope.menu = [{
       'title': 'Buckets',
       'state': 'buckets'
-    },
-    {
-      'title': 'Add Item',
-      'state': 'add-item'
     }];
 
     $scope.isCollapsed = true;

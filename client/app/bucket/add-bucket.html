@@ -1,0 +1,27 @@
+<div class="add-bucket-backdrop"></div>
+<div class="add-bucket" ui-view="add-bucket" autoscroll="false">
+    <div class="header">
+        <h3>Add Bucket</h3>
+        <div class="close" ui-sref="buckets">
+            <i class="fa fa-remove"></i>
+        </div>
+    </div>
+    <div class="body">
+        <div class="group">
+            <input type="text" ng-model="bucket.name" required>
+            <div class="highlight"></div>
+            <label>Bucket Name</label>
+        </div>
+        <div class="group">
+            <input type="text" ng-model="bucket.description" required>
+            <div class="highlight"></div>
+            <label>Bucket Description</label>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="btns">
+            <button class="btn btn-primary btn-lg" ng-click="addBucket(bucket)">Save</button>
+            <button class="btn btn-default btn-lg" ui-sref="buckets">Cancle</button>
+        </div>
+    </div>
+</div>

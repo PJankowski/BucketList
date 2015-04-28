@@ -10,12 +10,15 @@ var Bucket = require('../api/bucket/bucket.model');
 
 Bucket.find({}).remove(function() {
   Bucket.create({
-    name: 'Test 1'
+    name: 'Test 1',
+    description: 'This is a test description'
   },
   {
-    name: 'Test 2'
+    name: 'Test 2',
+    description: 'This is a test description'
   },
   {
-    name: 'Test 3'
+    name: 'Test 3',
+    description: 'This is a test description'
   });
 });

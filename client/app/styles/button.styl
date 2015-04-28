@@ -1,0 +1,71 @@
+.btn
+    background transparent
+    border none
+    border-radius 0
+    display block
+    font-size 1.2em
+    padding 4px 8px
+    outline none
+    cursor pointer
+    transition all 0.2s ease-in
+    font-family base-font-family
+    
+    &.btn-primary
+        background primary
+        color #FFFFFF
+        
+        &:hover
+            box-shadow 1px 1px 2px rgba(0,0,0,0.14), 2px 2px 4px rgba(0,0,0,0.28), -1px 1px 2px rgba(0,0,0,0.14), -2px 2px 4px rgba(0,0,0,0.28)
+            
+    &.btn-secondary
+        background secondary
+        color #FFFFFF
+        
+        &:hover
+            box-shadow 1px 1px 2px rgba(0,0,0,0.14), 2px 2px 4px rgba(0,0,0,0.28), -1px 1px 2px rgba(0,0,0,0.14), -2px 2px 4px rgba(0,0,0,0.28)
+    
+    &.btn-success
+        background success
+        color #FFFFFF
+        
+        &:hover
+            box-shadow 1px 1px 2px rgba(0,0,0,0.14), 2px 2px 4px rgba(0,0,0,0.28), -1px 1px 2px rgba(0,0,0,0.14), -2px 2px 4px rgba(0,0,0,0.28)
+        
+    &.btn-danger
+        background danger
+        color #FFFFFF
+        
+        &:hover
+            box-shadow 1px 1px 2px rgba(0,0,0,0.14), 2px 2px 4px rgba(0,0,0,0.28), -1px 1px 2px rgba(0,0,0,0.14), -2px 2px 4px rgba(0,0,0,0.28)
+        
+    &.btn-default
+        background darken(info, 10%)
+        
+        &:hover
+            box-shadow 1px 1px 2px rgba(0,0,0,0.14), 2px 2px 4px rgba(0,0,0,0.28), -1px 1px 2px rgba(0,0,0,0.14), -2px 2px 4px rgba(0,0,0,0.28)
+        
+    &.btn-lg
+        padding 8px 12px
+        
+    &.btn-md
+        padding 6px 10px
+        
+    &.btn-sm
+        padding 4px 8px
+        
+    &.btn-outline
+        background transparent
+        border 2px solid #F7F7F7
+        color #F7F7F7
+        
+        &.btn-primary
+            border-color primary
+            color primary
+            
+        &.btn-danger
+            border-color danger
+            color danger
+            
+        &.btn-default
+            border-color info
+            color info
