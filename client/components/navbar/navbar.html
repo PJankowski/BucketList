@@ -1,0 +1,10 @@
+<nav class="navbar" ng-controller="NavbarCtrl">
+  <div class="container">
+      <h1 class="logo"><a ui-sref="buckets">BucketList</a></h1>
+      
+      <div class="nav-right">
+          <a ng-repeat="link in menu" ui-sref="{{link.state}}">{{ link.title }}</a>
+      </div>
+    
+  </div>
+</nav>

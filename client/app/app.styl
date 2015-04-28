@@ -1,0 +1,71 @@
+@import "font-awesome/css/font-awesome.css"
+
+//
+// Font Awesome Fonts
+//
+
+@font-face
+  font-family: 'FontAwesome'
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0')
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal
+  font-style: normal
+  
+primary = #34495e
+secondary = #16a085
+success = #2ecc71
+danger = #e74c3c
+info = #ecf0f1
+text-color = #333333
+
+base-font-size = 14px
+base-font-family = 'Open Sans', 'Helvetica', sans-serif
+base-line-height = 1.2em
+
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+    
+.container
+    width 70%
+    max-width 1200px
+    margin 0 auto
+    
+    &:after
+        clear both
+        content ""
+        display table
+
+body
+    font-family base-font-family
+    font-size base-font-size
+    line-height base-line-height
+    color text-color
+    
+h1, h2, h3
+    display block
+    
+h1
+    font-size 2.5em
+    
+h2
+    font-size 2em
+    
+h3
+    font-size 1.5em
+    
+a
+    font-size 1.1em
+    color secondary
+    text-decoration none
+
+
+// Component styles are injected through grunt
+// injector
+@import 'bucket/bucket.styl';
+@import 'navbar/navbar.styl';
+// endinjector
