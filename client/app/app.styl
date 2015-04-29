@@ -16,14 +16,15 @@
   
 primary = #16a085
 secondary = lighten(#2c3e50, 10%)
-success = #2ecc71
+success = #27ae60
 danger = #c0392b
 info = #ecf0f1
 text-color = #333333
 
-base-font-size = 14px
+base-font-size = 16px
 base-font-family = 'Open Sans', 'Helvetica', sans-serif
 base-line-height = 1.2em
+base-font-weight = 300
 
 *
     margin 0
@@ -45,23 +46,7 @@ body
     font-size base-font-size
     line-height base-line-height
     color text-color
-    
-h1, h2, h3
-    display block
-    
-h1
-    font-size 2.5em
-    
-h2
-    font-size 2em
-    
-h3
-    font-size 1.5em
-    
-a
-    font-size 1.1em
-    color secondary
-    text-decoration none
+    font-weight base-font-weight
 
 
 // Component styles are injected through grunt
@@ -69,5 +54,9 @@ a
 @import 'bucket/bucket-list.styl';
 @import 'bucket/bucket.styl';
 @import 'styles/button.styl';
+@import 'styles/form.styl';
+@import 'styles/modal.styl';
+@import 'styles/postman.styl';
+@import 'styles/typography.styl';
 @import 'navbar/navbar.styl';
 // endinjector

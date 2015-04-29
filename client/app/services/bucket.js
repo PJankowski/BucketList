@@ -4,7 +4,8 @@ angular.module('bucketListApp')
     .factory('Bucket', ['$http', function ($http){
 
         var o = {
-            buckets: []
+            buckets: [],
+            items: []
         };
 
         o.get = function (){
@@ -18,17 +19,30 @@ angular.module('bucketListApp')
             $http.post('/api/bucket/', newBucket)
                 .success(function (bucket){
                     o.buckets.push(bucket);
-                    console.log(bucket);
                 })
                 .error(function (err){
                     console.log(err);
                 });
         };
 
+        o.addItem = function (newItem, id){
+            return $http.post('/api/bucket/'+id+'/item/', newItem)
+                .success(function (data){
+                    o.items.push(data);
+                })
+                .error(function (err){
+                    console.log(err);
+                });
+        };
+
+        o.removeItem = function (id){
+            return $http.delete('/api/bucket/item/' + id);
+        };
+
         o.show = function (id){
             return $http.get('/api/bucket/' + id)
                 .success(function (bucket){
-                    return bucket.data;
+                    return bucket;
                 })
                 .error(function (err){
                     console.log(err);

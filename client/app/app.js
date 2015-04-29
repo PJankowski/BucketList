@@ -4,7 +4,9 @@ angular.module('bucketListApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'angular-datepicker',
+  'Postman'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 

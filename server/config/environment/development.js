@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/bucketlist-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

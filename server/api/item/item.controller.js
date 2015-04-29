@@ -22,10 +22,9 @@ exports.index = function(req, res) {
 
 // Get a single thing
 exports.show = function(req, res) {
-  Item.findById(req.params.id, function (err, item) {
+  Item.find({bucket: req.params.id}, function (err, items) {
     if(err) { return handleError(res, err); }
-    if(!item) { return res.send(404); }
-    return res.json(item);
+    return res.json(200, items);
   });
 };
 

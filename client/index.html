@@ -11,9 +11,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/angular-postman/css/postman.css">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-native-picker/build/themes/default.css" />
+      <link rel="stylesheet" href="bower_components/angular-native-picker/build/themes/default.date.css" />
+      <link rel="stylesheet" href="bower_components/angular-native-picker/build/themes/default.time.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -56,6 +60,8 @@
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-native-picker/build/angular-datepicker.js"></script>
+      <script src="bower_components/angular-postman/js/postman.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -66,6 +72,7 @@
           <script src="app/bucket/bucket.js"></script>
           <script src="app/bucket/buckets.controller.js"></script>
           <script src="app/services/bucket.js"></script>
+          <script src="app/services/item.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->

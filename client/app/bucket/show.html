@@ -1,28 +1,34 @@
 <div class="container">
     <div class="bucket-left">
-        <h1>{{bucket.name}}</h1>
-        <br>
+        <h2>{{bucket.name}}</h2>
         <p>{{bucket.description}}</p>
-        <br>
-        <button class="btn btn-danger btn-md" ng-click="remove(bucket._id)">Remove Bucket</button>
-        <br><br>
-        <h2>Add Item to the Bucket</h2>
-        <br><br>
-        <div class="group">
-            <input type="text">
+
+        <button class="btn btn-danger btn-sm" ng-click="remove(bucket._id)">Remove Bucket</button>
+
+        <h3>Add Item to the Bucket</h3>
+
+        <div class="add-item-form">
+            <div class="group">
+                <input type="text" ng-model="newThing.name" placeholder="Name">
+            </div>
+
+            <div class="group">
+                <input type="text" ng-model="newThing.description" placeholder="Description">
+            </div>
+
+            <div class="group">
+                <input type="text" pick-a-date="date" ng-model="newThing.date" placeholder="Date">
+            </div>
+            <button class="btn btn-secondary btn-sm" ng-click="addItem(newThing)">Add Item</button>
         </div>
-        <br>
-        <div class="group">
-            <input type="text">
-        </div>
-        <br>
-        <button class="btn btn-secondary btn-md">Add Item</button>
     </div>
     <div class="bucket-right">
-        <ul>
-            <li>Item1</li>
-            <li>Item2</li>
-            <li>Item3</li>
-        </ul>
+        <div class="item" ng-repeat="item in bucket.items | orderBy:'+date'">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <time>{{ item.date | date : 'mediumDate'}}</time>
+
+            <button class="btn-icon btn-danger" ng-click="removeItem(item._id, $index)"><i class="fa fa-remove fa-2x"></i></button>
+        </div>
     </div>
 </div>
