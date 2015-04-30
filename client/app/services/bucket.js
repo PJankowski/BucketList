@@ -15,20 +15,20 @@ angular.module('bucketListApp')
                 });
         };
 
-        o.create = function (newBucket){
-            $http.post('/api/bucket/', newBucket)
-                .success(function (bucket){
-                    o.buckets.push(bucket);
+        o.addItem = function (newItem, id){
+            return $http.post('/api/bucket/'+id+'/item/', newItem)
+                .success(function (data){
+                    o.items.push(data);
                 })
                 .error(function (err){
                     console.log(err);
                 });
         };
-
-        o.addItem = function (newItem, id){
-            return $http.post('/api/bucket/'+id+'/item/', newItem)
+        
+        o.completeItem = function (id, item){
+            return $http.put('/api/bucket/'+id+'/item/'+item._id, item)
                 .success(function (data){
-                    o.items.push(data);
+                    return data;
                 })
                 .error(function (err){
                     console.log(err);

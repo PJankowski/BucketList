@@ -3,7 +3,7 @@
     width 100%
     margin-bottom 20px
     
-    input
+    input, textarea
         border none
         border-bottom 1px solid darken(info, 20%)
         outline none
@@ -30,10 +30,10 @@
         transition all 0.2s ease-in
         font-size 1.2em
         
-    input:valid ~ label, input:focus ~ label
+    input:valid ~ label, input:focus ~ label, textarea:valid ~ label, textarea:focus ~ label
         color primary
         top -11px
         font-size 1em
         
-    input:valid ~ .highlight, input:focus ~ .highlight
+    input:valid ~ .highlight, input:focus ~ .highlight, textarea:valid ~ .highlight, textarea:focus ~ .highlight
         width 100%

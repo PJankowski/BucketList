@@ -13,7 +13,8 @@
             </div>
 
             <div class="group">
-                <input type="text" ng-model="newThing.description" placeholder="Description">
+                <!--<input type="text" ng-model="newThing.description" placeholder="Description">-->
+                <textarea ng-model="newThing.description" placeholder="Description"></textarea>
             </div>
 
             <div class="group">
@@ -24,11 +25,13 @@
     </div>
     <div class="bucket-right">
         <div class="item" ng-repeat="item in bucket.items | orderBy:'+date'">
-            <h3>{{ item.name }}</h3>
+            <h3>{{ item.name }} - <small>{{ item.date | date : 'mediumDate'}}</small></h3>
             <p>{{ item.description }}</p>
-            <time>{{ item.date | date : 'mediumDate'}}</time>
 
-            <button class="btn-icon btn-danger" ng-click="removeItem(item._id, $index)"><i class="fa fa-remove fa-2x"></i></button>
+            <div class="btns">
+                <button class="btn-icon btn-info" ng-click="completeItem(bucket._id, item, $index)"><i class="fa fa-check fa-2x"></i></button>
+                <button class="btn-icon btn-danger" ng-click="removeItem(item._id, $index)"><i class="fa fa-remove fa-2x"></i></button>
+            </div>
         </div>
     </div>
 </div>

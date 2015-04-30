@@ -26,35 +26,13 @@ base-font-family = 'Open Sans', 'Helvetica', sans-serif
 base-line-height = 1.2em
 base-font-weight = 300
 
-*
-    margin 0
-    padding 0
-    box-sizing border-box
-    
-.container
-    width 70%
-    max-width 1200px
-    margin 0 auto
-    
-    &:after
-        clear both
-        content ""
-        display table
-
-body
-    font-family base-font-family
-    font-size base-font-size
-    line-height base-line-height
-    color text-color
-    font-weight base-font-weight
-
-
 // Component styles are injected through grunt
 // injector
 @import 'bucket/bucket-list.styl';
 @import 'bucket/bucket.styl';
 @import 'styles/button.styl';
 @import 'styles/form.styl';
+@import 'styles/global.styl';
 @import 'styles/modal.styl';
 @import 'styles/postman.styl';
 @import 'styles/typography.styl';

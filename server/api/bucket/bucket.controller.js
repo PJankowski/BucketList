@@ -23,7 +23,10 @@ exports.index = function(req, res) {
 
 // Get a single thing
 exports.show = function(req, res) {
-  Bucket.findOne({_id: req.params.id}).populate('items').exec(function (err, bucket) {
+  Bucket.findOne({_id: req.params.id}).populate({
+      path: 'items',
+      match: {completed: false}
+  }).exec(function (err, bucket) {
     if(err) { return handleError(res, err); }
     if(!bucket) { return res.send(404); }
     return res.json(bucket);
@@ -39,11 +42,6 @@ exports.create = function(req, res) {
 };
 
 exports.createItem = function(req, res){
-
-  console.log(req.body);
-
-  //var item = new Item(req.body);
-
   Item.create(req.body, function(err, item){
     if(err) {return handleError(res, err);}
 
@@ -61,6 +59,19 @@ exports.createItem = function(req, res){
   });
 };
 
+exports.completeItem = function(req, res){
+    if(req.body._id) { delete req.body._id; }
+    Item.findById(req.params.itemId, function(err, item){
+        if(err) {return handleError(res, err);}
+        if(!item) {return res.send(404);}
+        var updated = _.merge(item, req.body);
+        updated.save(function (err) {
+            if(err) {return handleError(res, err);}
+            return res.json(200, item);
+        });
+    });
+};
+
 // Updates an existing thing in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
@@ -75,6 +86,7 @@ exports.update = function(req, res) {
   });
 };
 
+// Deletes an Item from the DB
 exports.destroyItem = function(req, res){
   Item.findById(req.params.id, function (err, item){
     if(err) {return handleError(res, err);}

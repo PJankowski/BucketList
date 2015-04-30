@@ -22,6 +22,13 @@ angular.module('bucketListApp')
                     postman.success('New Item', 'You added a new item');
                 });
         };
+        
+        $scope.completeItem = function (bucketId, item, index){
+            item.completed = true;
+            Bucket.completeItem(bucketId, item);
+            $scope.bucket.items.splice(index, 1);
+            postman.success('Success', 'You completed an Item');
+        };
 
         $scope.removeItem = function (id, index){
             Bucket.removeItem(id);

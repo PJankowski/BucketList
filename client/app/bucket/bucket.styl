@@ -1,27 +1,41 @@
 .bucket-left
     float left
-    width 50%
+    width 100%
+    margin-bottom 20px
+    
+    @media screen and (min-width: 768px)
+        width 50%
     
     .add-item-form
         .group
-            width 60%
+            width 100%
+            
+            @media screen and (min-width: 768px)
+                width 60%
     
 .bucket-right
     float left
-    width 48%
-    margin-left 2%
+    width 100%
+    margin-left 0
+    
+    @media screen and (min-width: 768px)
+        width 48%
+        margin-left 2%
     
     .item
         padding 1.2rem
-        background darken(info, 10%)
+        background info
         margin-bottom 12px
         border-radius 3px
         border 1px solid darken(info, 5%)
         position relative
         
-        .btn-icon
+        .btns
             position absolute
             right 12px
             top 8px
+        
+        .btn-icon
             cursor pointer
+            margin-left 10px
         
