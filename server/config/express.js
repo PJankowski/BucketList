@@ -28,6 +28,7 @@ module.exports = function(app) {
   app.use(cookieParser());
   
   if ('production' === env) {
+    console.log(config.root);
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'public')));
     app.set('appPath', config.root + '/public');
@@ -35,6 +36,7 @@ module.exports = function(app) {
   }
 
   if ('development' === env || 'test' === env) {
+    console.log(config.root);
     app.use(require('connect-livereload')());
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'client')));
