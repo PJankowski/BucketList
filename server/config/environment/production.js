@@ -19,6 +19,6 @@ module.exports = {
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
             'mongodb://localhost/bucketlist'*/
-            'mongodb://PJankowski25:Payton15@ds031581.mongolab.com:31581/heroku_app36792052'
+            'mongodb://PJankowski25:Payton15@ds031581.mongolab.com:31581/heroku_app36792621'
   }
 };
